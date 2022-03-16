@@ -20,8 +20,7 @@ const Background_colorfunction = (containerstyle, boxStyel, bodycolor, Lastboxco
     Again.style.backgroundColor = again_button_backgoundcolor
     Again.style.color = again_color
 
-     let number = secratNumber
-    document.querySelector('#box').textContent = number
+
 }
 
 // this function for box style 
@@ -48,6 +47,8 @@ document.querySelector('#check').addEventListener('click', function () {
     if (!input.value) {
         displayMessage('⚠️ No Number')
     } else if (input.value == secratNumber) {
+        let number = secratNumber
+        document.querySelector('#box').textContent = number
         displayMessage('🥳 Correct  Number')
         box_style_Width('150px','3px solid White')
         Background_colorfunction("rgba(252, 203, 113, 0.972)", '#D2691E', 'white', '#D2691E', '#D2691E', 'White')
