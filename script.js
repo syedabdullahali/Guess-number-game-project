@@ -3,6 +3,7 @@ let score = 20;
 
 let HighScore = 0;
 
+let secratNumber = Math.trunc(Math.random() * 20) + 1
 // this function build for messages  
 
 const displayMessage = (message) => {
@@ -13,11 +14,14 @@ const Background_colorfunction = (containerstyle, boxStyel, bodycolor, Lastboxco
     document.querySelector('#container').style.backgroundColor = containerstyle
     document.querySelector('#box').style.backgroundColor = boxStyel
     document.querySelector('body').style.color = bodycolor
+
     document.querySelector('#last-box').style.backgroundColor = Lastboxcolor
     const Again = document.querySelector('#Again')
     Again.style.backgroundColor = again_button_backgoundcolor
     Again.style.color = again_color
 
+     let number = secratNumber
+    document.querySelector('#box').textContent = number
 }
 
 // this function for box style 
@@ -37,7 +41,7 @@ const score_update = (score) => {
     document.querySelector('.score').textContent = score
 }
 
-let secratNumber = Math.trunc(Math.random() * 20) + 1
+
 
 const input = document.querySelector('.guess')
 document.querySelector('#check').addEventListener('click', function () {
@@ -45,13 +49,15 @@ document.querySelector('#check').addEventListener('click', function () {
         displayMessage('⚠️ No Number')
     } else if (input.value == secratNumber) {
         displayMessage('🥳 Correct  Number')
+        box_style_Width('150px','3px solid White')
         Background_colorfunction("rgba(252, 203, 113, 0.972)", '#D2691E', 'white', '#D2691E', '#D2691E', 'White')
 
-
+        
         // this statement for highscore
         if (score > HighScore) {
             HighScore = score
             document.querySelector('.High-Score').textContent = HighScore
+            console.log(HighScore)
         }
 
     } else if (input.value !== secratNumber) {
@@ -63,9 +69,9 @@ document.querySelector('#check').addEventListener('click', function () {
 
         } else {
             score--
-            document.querySelector('.number').textContent = secratNumber
+            
             score_update(" 💥you lost the game ")
-            box_style_Width('100px', '3px solid White')
+            box_style_Width('150px', '3px solid White')
             check_buttonfunction('rgb(220,20,60)', 'white')
             Background_colorfunction("rgb(220,20,60)", 'black', 'white', 'black', 'black', 'white')
         }
