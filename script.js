@@ -1,7 +1,3 @@
-"use strict";
-
-
-
 
 let score = 20;
 
@@ -79,7 +75,7 @@ document.querySelector('#check').addEventListener('click', function () {
 // this is for reset and play again  game 
 
 const Reset_Button = document.querySelector('#Again')
-Reset_Button.addEventListener('click', function () {
+Reset_Button.addEventListener('click', function (){
     score = 20
     displayMessage('Start Guessing...')
     score_update(score)
