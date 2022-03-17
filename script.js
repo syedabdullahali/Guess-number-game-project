@@ -49,7 +49,6 @@ document.querySelector('#check').addEventListener('click', function () {
         if (score > HighScore) {
             HighScore = score
             document.querySelector('.High-Score').textContent = HighScore
-            console.log(HighScore)
         }
 
     } else if (input.value !== secratNumber) {
@@ -74,8 +73,8 @@ Reset_Button.addEventListener('click', function () {
     displayMessage('Start Guessing...')
     score_update(score)
     secratNumber = Math.trunc(Math.random() * 20) + 1
-    document.querySelector('.number').textContent = '?'
-    document.querySelector('.guess').value = ''
+    document.querySelector('#box').textContent = "?"
+    document.querySelector('.guess').value ='0'
     box_style_Width('100px', '3px solid')
     Background_colorfunction("antiquewhite", 'antiquewhite', 'black', 'aqua', 'aqua', 'black')
     check_buttonfunction('antiquewhite', 'black')
